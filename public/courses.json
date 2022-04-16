@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Special Batch IGCSC",
+        "price": "1500/Month",
+        "description": "This batch is combined for both Edexcel and Cambridge students, and ofcourse during question paper solving, edexcel and cambridge students will get separate solve classes.",
+        "img": "https://kalvi.wpengine.com/one-instructor/wp-content/uploads/sites/5/2014/06/course3-640x430.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Private Care IGCSC",
+        "price": "3000/Month",
+        "description": "The classes will comprise of * Detailed review of the whole Math syllabus. *Past Paper Solving. * Monthly tests. *Mock Exams after the completion of the syllabus.",
+        "img": "https://kalvi.wpengine.com/one-instructor/wp-content/uploads/sites/5/2014/08/course1-640x430.jpg"
+    },
+    {
+        "id": 3,
+        "name": "HSC Batch 2023",
+        "price": "1200/Month",
+        "description": "আসন্ন  এইচ এস সি পরীক্ষাকে সামনে রেখে আমি শুরু করতে যাচ্ছি নতুন ব্যাচ যেখানে তোমরা পাবে একসাথে পদার্থ, রসায়ন ও গণিতের পূর্ণ প্রস্তুতি। তাই নতুন ব্যাচে ভর্তি হতে আজই যোগাযোগ কর।",
+        "img": "https://kalvi.wpengine.com/one-instructor/wp-content/uploads/sites/5/2014/08/course2-640x430.jpg"
+    },
+    {
+        "id": 4,
+        "name": "BRAKE REPARING",
+        "place": "Thailand",
+        "price": "3000",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://a.cdn-hotels.com/images/common/pages/hpa/modules/uniquepropertiesmodul/kakslauttanenarcticresort.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Aqua Dome",
+        "place": "Austria",
+        "price": "5000",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://a.cdn-hotels.com/images/common/pages/hpa/modules/uniquepropertiesmodul/hotelfasano.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Hotekl Fanaso",
+        "place": "Brazil",
+        "price": "4000",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://a.cdn-hotels.com/images/common/pages/hpa/modules/uniquepropertiesmodul/aquadome.jpg"
+    }
+]
