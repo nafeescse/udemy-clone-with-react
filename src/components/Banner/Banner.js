@@ -5,15 +5,17 @@ import batch from '../../batch.jpg';
 import care from '../../care.jpg';
 import React from 'react';
 import svg from '../../download-svg.png';
+import { useNavigate } from 'react-router-dom';
 
 const Banner = () => {
+    const navigate = useNavigate();
     return (
 
         <div className='grid grid-cols-1 md:grid-cols-2  bg-red-200 h-screen'>
             <div className=' flex flex-col justify-center items-center'><div className='fs-3 text-red-900'>
                 Learn New Things
                 <h2 className='text-5xl'>IN COMFORT <br /> OF YOUR HOME</h2>
-                <Button className='bg-danger rounded-pill outline-none'>See Courses</Button>
+                <Button onClick={() => {navigate('/courses')}} className='bg-danger rounded-pill outline-none'>See Courses</Button>
             </div>
             </div>
             <Carousel className='my-auto'>

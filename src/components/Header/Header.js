@@ -23,7 +23,7 @@ const Header = () => {
                         <Link className='px-2 mx-auto text-decoration-none text-red-700 fs-5' to="/blogs">Blogs</Link>
                         <Link className='px-2 mx-auto text-decoration-none text-red-700 fs-5' to="/about">About</Link>
                         <Link className='px-2 mx-auto text-decoration-none text-light fs-5 bg-danger rounded-pill' to="/login">Login</Link>
-                        <Link className='px-2 mx-auto rounded-pill text-decoration-none text-light fs-5 bg-danger' to="/register" >Register</Link>
+                        <Link className='px-2 mx-2 rounded-pill text-decoration-none text-light fs-5 bg-danger' to="/register" >Register</Link>
 
                         {/* {user ?
                                 <img onClick={logout} className='rounded-circle w-75' src={user.photoURL} alt="" />
