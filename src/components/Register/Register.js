@@ -5,32 +5,44 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { Button, Form } from 'react-bootstrap';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import './Register.css'
+import './Register.css';
 
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    let errorMsg;
+    let load;
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
     if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
+        errorMsg = 
+            <p>{error.message}</p>;
+
     }
     if (loading) {
-        return <p>Loading...</p>;
+        load = <div>
+            <div class="spinner-grow" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
     }
     if (user) {
         navigate('/login')
 
     }
+    
     return (
         <div className='login grid grid-cols-1 md:grid-cols-2 border-2 border-rose-700'>
             <div className=" bg-red-400 flex flex-col justify-center items-center text-white p-10">
@@ -66,18 +78,23 @@ const Register = () => {
                             <Form.Control required onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
                         </Form.Group>
 
+                        <div className='flex justify-center'>{load}</div>
+                        <small className='text-danger'>{errorMsg}</small>
+
                         <div className='d-flex justify-content-between align-items-center'>
 
                             <small>Already Joined? <Link className='text-decoration-none' to='/login'>Login Now</Link></small>
 
-                            <Button onClick={() => { createUserWithEmailAndPassword(email, password) }}
+                            <Button onClick={()=> {
+                                createUserWithEmailAndPassword(email, password)
+                            }}
                                 variant="danger" type="submit">
                                 Submit
                             </Button>
                         </div>
 
                     </Form>
-                    {/* <SocialLogin></SocialLogin> */}
+                   
 
                 </div>
 

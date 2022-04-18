@@ -15,20 +15,23 @@ const Login = () => {
     const location = useLocation();
     let errorMsg;
     let load;
+
     let from = location.state?.from?.pathname || "/";
+
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error
     ] = useSignInWithEmailAndPassword(auth);
+
     const [sendPasswordResetEmail, errorReset] = useSendPasswordResetEmail(auth);
+
     if (error) {
 
         errorMsg = <div>
             <p>{error.message}</p>
         </div>;
-
     }
     if (loading) {
         load = <div>
@@ -57,9 +60,6 @@ const Login = () => {
     const handleButton = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password);
-
-
-
     }
     return (
         <div className='login grid grid-cols-1 md:grid-cols-2 border-2 border-rose-700'>

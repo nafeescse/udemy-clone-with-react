@@ -2,8 +2,9 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div>
-            <h2>Blogs</h2>
+        <div className='flex flex-col justify-center items-center m-2'>
+            <h2 className='py-3 text-decoration-underline text-danger'>BLOGS</h2>
+            <h2 className='py-3 text-decoration-underline text-danger'>BLOGS</h2>
         </div>
     );
 };
