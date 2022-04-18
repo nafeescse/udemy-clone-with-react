@@ -1,17 +1,19 @@
 
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import {  ChevronDoubleRightIcon } from '@heroicons/react/solid'
 import './Login.css'
 import auth from '../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
         user,
@@ -29,7 +31,7 @@ const Login = () => {
         return <p>Loading...</p>;
     }
     if (user) {
-        navigate('/home')
+        navigate(from, {replace: true});
 
     }
     return (
@@ -38,7 +40,8 @@ const Login = () => {
                 <div className='w-50 mx-auto'>
 
 
-                    <h2 className='text-center text-red-800'>Login</h2>
+                    <h2 className='text-center text-red-800'>Login With</h2>
+                    <SocialLogin></SocialLogin>
 
                     <Form className=''>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -62,7 +65,7 @@ const Login = () => {
                         </div>
 
                     </Form>
-                    {/* <SocialLogin></SocialLogin> */}
+                    
 
                 </div>
 

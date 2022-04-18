@@ -1,10 +1,17 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import logo from '../../logo.png'
+import { getAuth, signOut } from 'firebase/auth';
+import auth from '../../firebase.init';
 import './Header.css'
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+      };
     return (
         <Navbar className='navbar bg-red-200' expand="lg">
 
@@ -22,13 +29,14 @@ const Header = () => {
                         <Link className='px-2 mx-auto text-decoration-none text-red-700 fs-5' to="/courses">Courses</Link>
                         <Link className='px-2 mx-auto text-decoration-none text-red-700 fs-5' to="/blogs">Blogs</Link>
                         <Link className='px-2 mx-auto text-decoration-none text-red-700 fs-5' to="/about">About</Link>
-                        <Link className='px-2 mx-auto text-decoration-none text-light fs-5 bg-danger rounded-pill' to="/login">Login</Link>
-                        <Link className='px-2 mx-2 rounded-pill text-decoration-none text-light fs-5 bg-danger' to="/register" >Register</Link>
+                        {user ?
+                                <p onClick={logout} className='cursor-pointer text-center text-white px-2 py-1  border-0 rounded-pill  bg-danger' src={user.displayName} alt="" >Sign Out</p>
+                                : <div><Link className='text-center text-white px-2 py-1  border-0 rounded-pill  bg-red-600 text-decoration-none' to="/login">Login</Link>
+                                    <Link className='text-center text-white px-2 py-1  border-0 rounded-pill  bg-red-600 text-decoration-none' to="/register" >Register</Link></div>}
+                        {/* <Link className='px-2 mx-auto text-decoration-none text-light fs-5 bg-danger rounded-pill' to="/login">Login</Link>
+                        <Link className='px-2 mx-2 rounded-pill text-decoration-none text-light fs-5 bg-danger' to="/register" >Register</Link> */}
 
-                        {/* {user ?
-                                <img onClick={logout} className='rounded-circle w-75' src={user.photoURL} alt="" />
-                                : <div><Link className='px-2 mx-2 text-decoration-none text-light fs-4 bg-danger rounded-pill' to="/login">Login</Link>
-                                    <Link className='px-2 mx-2 rounded-pill text-decoration-none text-light fs-4 bg-danger' to="/register" >Register</Link></div>} */}
+                        {/*  */}
 
                     </Nav>
 

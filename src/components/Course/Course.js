@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Card, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Course = (props) => {
-    const { id, img, name, place, price } = props.course;
+    const {  img, name, price } = props.course;
+    const navigate = useNavigate();
     return (
         <div>
             <Row>
@@ -17,7 +18,7 @@ const Course = (props) => {
                     <p className='text-center'>
                        Price: {price}
                     </p>
-                    <Link to='/checkout'><Button  variant="primary">Book Now</Button></Link>
+                    <Button onClick={()=> {navigate('/checkout')}}  variant="danger">Book Now</Button>
                 </Card.Body>
             </Card>
         </Row>
