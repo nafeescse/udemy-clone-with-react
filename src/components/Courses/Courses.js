@@ -11,9 +11,9 @@ const Courses = () => {
     },[])
     
     return (
-        <div className='w-75 mx-auto'>
+        <div className='w-75 flex flex-col items-center justify-center mx-auto'>
             <h2 className='fs-xl text-center my-5 text-red-800 underline underline-offset-4'>Available Courses </h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 '>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 '>
             {
                 courses.map(course => <Course key={course.id} course={course}></Course>)
             }

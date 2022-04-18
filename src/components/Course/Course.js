@@ -10,7 +10,7 @@ const Course = (props) => {
             <Row>
             <Card className='shadow-xl' style={{ width: '20rem' }}>
                 <Card.Img variant="top" className='rounded-3 my-2' src= {img} />
-                <Card.Body className='d-flex flex-column justify-content-center '>
+                <Card.Body className='flex flex-col justify-center items-center'>
                     <Card.Title className='text-center'>{name}</Card.Title>
                     {/* <p className='text-center'>
                     {class}
