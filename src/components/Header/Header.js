@@ -31,8 +31,8 @@ const Header = () => {
                         <Link className='px-2 mx-auto text-decoration-none text-red-700 fs-5' to="/about">About</Link>
                         {user ?
                                 <p onClick={logout} className='cursor-pointer text-center text-white px-2 py-1  border-0 rounded-pill  bg-danger' src={user.displayName} alt="" >Sign Out</p>
-                                : <div><Link className='text-center text-white px-2 py-1  border-0 rounded-pill  bg-red-600 text-decoration-none' to="/login">Login</Link>
-                                    <Link className='text-center text-white px-2 py-1  border-0 rounded-pill  bg-red-600 text-decoration-none' to="/register" >Register</Link></div>}
+                                : <div className='grid grid-cols-1 md:grid-cols-2 '><Link className='text-center text-white px-2 py-1 m-1  border-0 rounded-pill  bg-red-600 text-decoration-none mx-1 my-1' to="/login">Login</Link>
+                                <Link className='text-center text-white px-2 py-1 m-1  border-0 rounded-pill  bg-red-600 text-decoration-none mx-1 my-1' to="/register" >Register</Link></div>}
                         {/* <Link className='px-2 mx-auto text-decoration-none text-light fs-5 bg-danger rounded-pill' to="/login">Login</Link>
                         <Link className='px-2 mx-2 rounded-pill text-decoration-none text-light fs-5 bg-danger' to="/register" >Register</Link> */}
 
