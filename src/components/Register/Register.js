@@ -34,12 +34,16 @@ const Register = () => {
     return (
         <div className='login grid grid-cols-1 md:grid-cols-2 border-2 border-rose-700'>
             <div className=" bg-red-400 flex flex-col justify-center items-center text-white p-10">
-                <SocialLogin></SocialLogin>
                 <h1>Welcome, Back!!</h1>
+                <SocialLogin></SocialLogin>
                 <p className='text-center px-1'>To keep connected with us please login with your personal info.</p>
+
                 <button onClick={() => { navigate('/login') }} className='bg-white rounded-pill text-red-800 fw-bold px-4 py-2 flex items-center'>LOGIN
                     <ChevronDoubleRightIcon className="ms-2 h-5 w-5 text-red-800" />
-                </button></div>
+                </button>
+
+            </div>
+
             <div className="photo bg-white flex flex-col justify-center items-center">
                 <div className='w-50 mx-auto py-2'>
 
